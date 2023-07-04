@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ProjectController!{% endblock %}
+
+{% block body %}
+<h1>{{ project.name }}</h1>
+
+    <p>{{ project.description }}</p>
+
+    <a href="{{ path('delete_project', {id:project.id}) }}" class="btn btn-danger">remove</a>
+    <a href="{{ path('add_image', {id:project.id}) }}" class="btn btn-danger">image</a>
+
+
+
+
+{% endblock %}
