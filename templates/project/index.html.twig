@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ProjectController!{% endblock %}
+
+{% block body %}
+    <a href="{{ path('app_project') }}" class="btn btn-link ">all</a>
+    {% for discipline in disciplines %}
+        <a href="{{ path('app_project_discipline', {name:discipline.name}) }}" class="btn btn-link ">{{ discipline.name }}</a>
+    {% endfor %}
+
+<div class="row">
+    {% for project in projects %}
+        <div class="col-3 p-0">
+            <div class="bg-warning me-2 mb-2 p-2">
+                <a href="{{ path('show_project', {id:project.id}) }}" >
+                    <h3>{{ project.name }}</h3>
+
+                </a>
+            </div>
+        </div>
+
+    {% endfor %}
+</div>
+
+
+{% endblock %}
