@@ -3,6 +3,9 @@
 {% block title %}Hello ProjectController!{% endblock %}
 
 {% block body %}
+
+<h2>    {{ 'test'|trans }}</h2>
+
     <a href="{{ path('app_project') }}" class="btn btn-link ">all</a>
     {% for discipline in disciplines %}
         <a href="{{ path('app_project_discipline', {name:discipline.name}) }}" class="btn btn-link ">{{ discipline.name }}</a>

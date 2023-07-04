@@ -12,13 +12,15 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
-#[Route('/project')]
+#[Route('{_locale}/project')]
+
 class ProjectController extends AbstractController
 {
     #[Route('/', name: 'app_project')]
     #[Route('/d/{name}', name: 'app_project_discipline', priority: 3)]
-    public function index(ProjectRepository $projectRepository, DisciplineRepository $disciplineRepository, Discipline $discipline=null): Response
+    public function index(ProjectRepository $projectRepository, DisciplineRepository $disciplineRepository, Discipline $discipline=null, TranslatorInterface $translator): Response
     {
         $disciplines = $disciplineRepository->findAll();
 

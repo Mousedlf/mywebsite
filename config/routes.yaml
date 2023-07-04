@@ -3,3 +3,9 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+
+project:
+    path: /{_locale}/
+    controller: App\Controller\ProjectController::index
+    requirements:
+        _locale: en|fr|de
