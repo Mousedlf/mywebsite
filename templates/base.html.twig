@@ -25,15 +25,18 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{{path('new_project') }}">New</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-
                 </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
+                {#    Barre de recherche #}
+                <div class="">
+                    <div class="col-5">
+                        <form action="{{ path('search_project') }}" method="POST">
+                            <div class="input-group">
+                                <input type="text" name="search" class="form-control border-primary">
+                                <button type="submit" class="input-group-text btn btn-primary">Search</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>

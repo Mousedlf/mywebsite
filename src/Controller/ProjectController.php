@@ -12,16 +12,22 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Contracts\Translation\TranslatorInterface;
 
-#[Route('{_locale}/project')]
+#[Route('{_locale}')]
 
 class ProjectController extends AbstractController
 {
     #[Route('/', name: 'app_project')]
     #[Route('/d/{name}', name: 'app_project_discipline', priority: 3)]
-    public function index(ProjectRepository $projectRepository, DisciplineRepository $disciplineRepository, Discipline $discipline=null, TranslatorInterface $translator): Response
+    #[Route('/search', name: 'search_project',  methods: ['POST'])]
+    public function index(ProjectRepository $projectRepository, DisciplineRepository $disciplineRepository, Discipline $discipline=null, Request $request): Response
     {
+        $routeName = $request->attributes->get('_route');
+
+        if($routeName === "search_project"){
+            
+        }
+
         $disciplines = $disciplineRepository->findAll();
 
         if($discipline){
@@ -42,8 +48,6 @@ class ProjectController extends AbstractController
             'project'=>$project,
         ]);
     }
-
-
 
     #[Route('/new', name: 'new_project' , priority: 2)]
     #[Route('/edit/{id}', name: 'edit_project', priority: 2)]
