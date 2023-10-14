@@ -49,8 +49,8 @@ class ProjectController extends AbstractController
         ]);
     }
 
-    #[Route('/new', name: 'new_project' , priority: 2)]
-    #[Route('/edit/{id}', name: 'edit_project', priority: 2)]
+    #[Route('/admin/new', name: 'new_project' , priority: 2)]
+    #[Route('/admin/edit/{id}', name: 'edit_project', priority: 2)]
     public function create(Request $request, EntityManagerInterface $manager, Project $project=null): Response
     {
         $edit= false;
@@ -80,7 +80,7 @@ class ProjectController extends AbstractController
         ]);
     }
 
-    #[Route('/delete/{id}', name: 'delete_project')]
+    #[Route('/admin/delete/{id}', name: 'delete_project')]
     public function delete(EntityManagerInterface $manager, Project $project): Response
     {
         if($project){
