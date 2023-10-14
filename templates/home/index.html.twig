@@ -3,18 +3,40 @@
 {% block title %}Hello HomeController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/home/caroline/Documents/PERSO/portfolio/src/Controller/HomeController.php'|file_link(0) }}">src/Controller/HomeController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/home/caroline/Documents/PERSO/portfolio/templates/home/index.html.twig'|file_link(0) }}">templates/home/index.html.twig</a></code></li>
-    </ul>
-</div>
+    <div class="mt-5 pt-5" >
+        <h1 class="text-uppercase">Hey, I'm Caroline</h1>
+        <h2>webdesigner, web developer, and graphic designer <br> based in Lyon, France</h2>
+
+        <div class="d-flex flex-column flex-md-row mt-5">
+            <div class="me-5">
+                <i class="fa-solid fa-arrow-right-long"></i>
+                <a href="{{ path('app_project') }}" class="btn text-decoration-none kalam fs-4">see my projects</a>
+
+            </div>
+            <div class="">
+                <i class="fa-solid fa-arrow-right-long"></i>
+                <a href="" class="btn text-decoration-none kalam fs-4">more about me</a>
+
+            </div>
+        </div>
+
+        <div class="mt-5 pt-5">
+            <a class="btn text-decoration-none text-primary" href="https://github.com/Mousedlf" target="_blank">
+                <i class="fs-1 fa-brands fa-github"></i>
+            </a>
+            <a class="btn text-decoration-none text-primary" href="https://www.linkedin.com/in/caroline-de-la-fouchardiere-289a5b1b7?originalSubdomain=fr" target="_blank">
+                <i class="fs-1 fa-brands fa-linkedin"></i>
+            </a>
+
+        </div>
+
+
+
+    </div>
+
+
+
+
 {% endblock %}

@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/discipline')]
+#[Route('{_locale}/discipline')]
 class DisciplineController extends AbstractController
 {
     #[Route('/', name: 'app_discipline_index', methods: ['GET'])]

@@ -4,41 +4,37 @@
 
 {% block body %}
 
-<h2>    {{ 'test'|trans }}</h2>
 
-    <div class="d-flex flex-column">
-        <ul>
-            <li>
-                <a href="{{ path('app_project') }}" class="btn btn-link ">all</a>
+<div class="sticky-top my-4">
+    <a href="{{ path('app_project') }}" class="btn btn-link text-decoration-none ps-0 ms-0 text-black">
+        All
+    </a>
 
-            </li>
-            {% for discipline in disciplines %}
-                <li>
-                    <a href="{{ path('app_project_discipline', {name:discipline.name}) }}" class="btn btn-link ">{{ discipline.name }}</a>
-                    <ul>
-                        {% for project in discipline.projects %}
-                            <li>{{ project.name }}</li>
-                        {% endfor %}
+    {% for discipline in disciplines %}
+        <span>|</span>
+        <a href="{{ path('app_project_discipline', {name:discipline.name}) }}" class="btn btn-link text-decoration-none text-black">
 
-                    </ul>
-                </li>
+            {{ discipline.name }}
+        </a>
+    {% endfor %}
 
-            {% endfor %}
-
-        </ul>
-    </div>
+</div>
 
 
 
 <div class="row">
     {% for project in projects %}
-        <div class="col-3 p-0">
-            <div class="bg-warning me-2 mb-2 p-2">
-                <a href="{{ path('show_project', {id:project.id}) }}" >
-                    <h3>{{ project.name }}</h3>
+        <div class="cont col-3 p-0 " >
+            <a href="{{ path('show_project', {id:project.id}) }}" >
 
-                </a>
+            {% if project.images|length > 0 %}
+            <img src="{{ vich_uploader_asset(project.images.0, 'imageFile')}}" alt="{{ project.name }} project image" class="image">
+            {% endif %}
+
+            <div class="overlay me-2 mb-2 p-2">
+                    <h3 class="text">{{ project.name }}</h3>
             </div>
+        </a>
         </div>
 
     {% endfor %}

@@ -1,0 +1,75 @@
+@import "~bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&display=swap');
+
+@font-face {
+  font-family: 'Visby Heavy';
+  src: url('VisbyHeavy.woff') format('woff');
+}
+@font-face {
+  font-family: 'Visby Bold';
+  src: url('VisbyBold.woff') format('woff');
+}
+
+
+h1{
+  font-family: 'Visby Heavy', sans-serif;
+  font-size: 3rem;
+}
+
+h2,h4{
+  font-family: 'Visby Bold', sans-serif;
+}
+
+a:hover{
+  font-family: "Kalam", sans-serif;
+  font-weight: 700;
+}
+
+.kalam{
+  font-family: "Kalam", sans-serif;
+}
+
+.text-primary{
+  color: darkblue !important;
+}
+
+
+
+//
+
+.cont {
+  position: relative;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: darkblue;
+}
+
+.cont:hover .overlay {
+  opacity: 1;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
