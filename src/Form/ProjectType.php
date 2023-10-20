@@ -16,6 +16,9 @@ class ProjectType extends AbstractType
         $builder
             ->add('name')
             ->add('description')
+            ->add('descriptionFr', null, [
+                'label'=>'Description (français)',
+            ])
             ->add('discipline', EntityType::class,  [
                 'choice_label'=>'name',
                 'class'=>Discipline::class

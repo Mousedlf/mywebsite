@@ -1,2 +1,13 @@
-test: "website in english"
-nature: "nature english"
+navbar:
+  projects: 'Projects'
+  me: "About me"
+home:
+  me: "Hey, I'm Caroline"
+  job: "webdesigner, web developer, and graphic designer based in Lyon, France"
+  cta:
+    projects: "see my projects"
+    me: "more about me"
+btn:
+  edit: "edit"
+  images: "manage images"
+  delete: "remove"

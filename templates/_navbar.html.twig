@@ -4,9 +4,9 @@
             <div class="">
                 <a class="navbar-brand" href="{{ path('app_home') }}">
                     <img src="{{ asset('placeholder.svg') }}" alt="my little mouse logo" height="60px">
-                    <a href="" class="btn text-uppercase kalam">about me</a>
+                    <a href="" class="btn text-uppercase kalam">{{ "navbar.me"|trans }}</a>
                     <span>|</span>
-                    <a href="{{ path('app_project') }}" class="btn text-uppercase kalam">projects</a>
+                    <a href="{{ path('app_project') }}" class="btn text-uppercase kalam">{{ "navbar.projects"|trans }}</a>
                 </a>
             </div>
 

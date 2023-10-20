@@ -6,17 +6,27 @@
 
     <div class="col-9">
         <h1 class="mt-5">{{ project.name }}</h1>
-        <p>{{ project.description }}</p>
+
+        {% if locale == 'fr' %}
+            <p>{{ project.descriptionFr }}</p>
+            {% else %}
+                <p>{{ project.description }}</p>
+        {% endif %}
 
     </div>
 
     {% if is_granted('ROLE_ADMIN') %}
-    <a href="{{ path('edit_project', {id:project.id}) }}" class="badge rounded-pill text-bg-warning">edit</a>
-    <a href="{{ path('delete_project', {id:project.id}) }}" class="badge rounded-pill text-bg-danger">remove</a>
-    <a href="{{ path('add_image', {id:project.id}) }}" class="badge rounded-pill text-bg-warning">manage images</a>
+    <a href="{{ path('edit_project', {id:project.id}) }}" class="badge rounded-pill text-bg-warning">{{ "btn.edit"|trans }}</a>
+    <a href="{{ path('delete_project', {id:project.id}) }}" class="badge rounded-pill text-bg-danger">{{ "btn.delete"|trans }}</a>
+    <a href="{{ path('add_image', {id:project.id}) }}" class="badge rounded-pill text-bg-warning">{{ "btn.images"|trans }}</a>
     {% endif %}
 
-    <p class="card mt-5 text-center">images ici</p>
+    <div class="row mt-5">
+        <div class="card col-4">images </div>
+        <div class="card col-4">images </div>
+        <div class="card col-4">images </div>
+
+    </div>
 {#
     {% for image in project.images %}
         <div class="card">

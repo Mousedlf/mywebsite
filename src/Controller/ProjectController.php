@@ -22,12 +22,6 @@ class ProjectController extends AbstractController
     #[Route('/search', name: 'search_project',  methods: ['POST'])]
     public function index(ProjectRepository $projectRepository, DisciplineRepository $disciplineRepository, Discipline $discipline=null, Request $request): Response
     {
-        $routeName = $request->attributes->get('_route');
-
-        if($routeName === "search_project"){
-            
-        }
-
         $disciplines = $disciplineRepository->findAll();
 
         if($discipline){
@@ -42,10 +36,13 @@ class ProjectController extends AbstractController
     }
 
     #[Route('/{id}', name: 'show_project')]
-    public function show(Project $project): Response
+    public function show(Project $project, Request $request): Response
     {
+        $locale = $request->getLocale();
+
         return $this->render('project/show.html.twig', [
             'project'=>$project,
+            'locale'=>$locale
         ]);
     }
 
@@ -73,7 +70,7 @@ class ProjectController extends AbstractController
         }
 
 
-        return $this->renderForm('project/new.html.twig', [
+        return $this->render('project/new.html.twig', [
             'formProject'=>$formProject,
             'edit'=>$edit,
             'title'=>$title

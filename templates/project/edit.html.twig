@@ -6,8 +6,13 @@
 <h1>Add project</h1>
 
     {{  form_start(formProject) }}
+
+
     {{  form_row(formProject.name) }}
     {{  form_row(formProject.description) }}
+
+    {{  form_widget(formProject.description_fr) }}
+
     <button class="btn btn-primary" type="submit">OK</button>
     {{  form_end(formProject) }}
 

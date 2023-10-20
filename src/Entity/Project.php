@@ -28,6 +28,10 @@ class Project
     #[ORM\OneToMany(mappedBy: 'project', targetEntity: Image::class)]
     private Collection $images;
 
+    #[ORM\Column(type: Types::TEXT, nullable: true)]
+    private ?string $description_fr = null;
+
+
     public function __construct()
     {
         $this->images = new ArrayCollection();
@@ -103,4 +107,18 @@ class Project
 
         return $this;
     }
+
+    public function getDescriptionFr(): ?string
+    {
+        return $this->description_fr;
+    }
+
+    public function setDescriptionFr(?string $description_fr): static
+    {
+        $this->description_fr = $description_fr;
+
+        return $this;
+    }
+
+
 }
