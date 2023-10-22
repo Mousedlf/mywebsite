@@ -1,41 +1,33 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}Portfolio | Caroline de la Fouchardiere{% endblock %}
 
 {% block body %}
 
+    <h1 class="text-uppercase mb-1">{{ "home.me"|trans }}</h1>
+    <h2>{{ "home.job"|trans }}</h2>
 
-    <div class="mt-5 pt-5" >
-        <h1 class="text-uppercase">{{ "home.me"|trans }}</h1>
-        <h2>{{ "home.job"|trans }}</h2>
-
-        <div class="d-flex flex-column flex-md-row mt-5">
-            <div class="me-5">
-                <i class="fa-solid fa-arrow-right-long"></i>
-                <a href="{{ path('app_project') }}" class="btn text-decoration-none kalam fs-4">{{ "home.cta.projects"|trans }}</a>
-
-            </div>
-            <div class="">
-                <i class="fa-solid fa-arrow-right-long"></i>
-                <a href="" class="btn text-decoration-none kalam fs-4">{{ "home.cta.me"|trans }}</a>
-
-            </div>
-        </div>
-
-        <div class="mt-5 pt-5">
-            <a class="btn text-decoration-none text-primary" href="https://github.com/Mousedlf" target="_blank">
-                <i class="fs-1 fa-brands fa-github"></i>
-            </a>
-            <a class="btn text-decoration-none text-primary" href="https://www.linkedin.com/in/caroline-de-la-fouchardiere-289a5b1b7?originalSubdomain=fr" target="_blank">
-                <i class="fs-1 fa-brands fa-linkedin"></i>
-            </a>
+    <div class="d-flex flex-column flex-md-row mt-5">
+        <div class="me-5">
+            <i class="fa-solid fa-arrow-right-long"></i>
+            <a href="{{ path('app_project') }}" class="btn text-decoration-none kalam fs-4">{{ "home.cta.projects"|trans }}</a>
 
         </div>
+        <div class="">
+            <i class="fa-solid fa-arrow-right-long"></i>
+            <a href="{{ path('app_me') }}" class="btn text-decoration-none kalam fs-4">{{ "home.cta.me"|trans }}</a>
 
-
-
+        </div>
     </div>
 
+    <div class="mt-5 pt-5">
+        <a class="btn text-decoration-none " href="https://github.com/Mousedlf" target="_blank">
+            <i class="fs-1 fa-brands fa-github"></i>
+        </a>
+        <a class="btn text-decoration-none " href="https://www.linkedin.com/in/caroline-de-la-fouchardiere-289a5b1b7?originalSubdomain=fr" target="_blank">
+            <i class="fs-1 fa-brands fa-linkedin"></i>
+        </a>
+    </div>
 
 
 

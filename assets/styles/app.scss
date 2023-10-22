@@ -9,33 +9,67 @@
   font-family: 'Visby Bold';
   src: url('VisbyBold.woff') format('woff');
 }
+@font-face {
+  font-family: 'Helsinki';
+  src: url('helsinki-webfont.woff') format('woff');
+}
 
+.navbar{
+  z-index: 1;
+}
+
+.visbyB{
+  font-family: 'Visby Bold', sans-serif;
+}
 
 h1{
-  font-family: 'Visby Heavy', sans-serif;
+  font-family: 'Helsinki', sans-serif;
   font-size: 3rem;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
 }
 
 h2,h4{
   font-family: 'Visby Bold', sans-serif;
 }
 
+p{
+  font-size: 1.25rem;
+}
+
 a:hover{
   font-family: "Kalam", sans-serif;
   font-weight: 700;
+  color: #0000ff !important;
 }
 
 .kalam{
-  font-family: "Kalam", sans-serif;
+  font-family: "Visby Bold", sans-serif;
 }
 
 .text-primary{
-  color: darkblue !important;
+  color: #0000ff !important;
 }
 
 
+// line animation
 
-//
+.path {
+  stroke-dasharray: 4200;
+  stroke-dashoffset: 4400;
+  animation: dash 12s linear alternate infinite;
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 4200;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+// overlay gallery
 
 .cont {
   position: relative;
@@ -57,15 +91,17 @@ a:hover{
   width: 100%;
   opacity: 0;
   transition: .5s ease;
-  background-color: darkblue;
+  background-color: #ffffff;
+  border: solid 5px #0000ff;
 }
 
 .cont:hover .overlay {
-  opacity: 1;
+  opacity: 75;
 }
 
 .text {
-  color: white;
+  color: #0000ff;
+  font-family: 'Helsinki', sans-serif;
   font-size: 20px;
   position: absolute;
   top: 50%;

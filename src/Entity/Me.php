@@ -15,21 +15,37 @@ class Me
     private ?int $id = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
-    private ?string $description = null;
+    private ?string $intro = null;
+
+    #[ORM\Column(type: Types::TEXT, nullable: true)]
+    private ?string $intro_fr = null;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getDescription(): ?string
+
+    public function getIntro(): ?string
     {
-        return $this->description;
+        return $this->intro;
     }
 
-    public function setDescription(?string $description): static
+    public function setIntro(?string $intro): static
     {
-        $this->description = $description;
+        $this->intro = $intro;
+
+        return $this;
+    }
+
+    public function getIntroFr(): ?string
+    {
+        return $this->intro_fr;
+    }
+
+    public function setIntroFr(?string $intro_fr): static
+    {
+        $this->intro_fr = $intro_fr;
 
         return $this;
     }

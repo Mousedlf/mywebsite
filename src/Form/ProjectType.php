@@ -19,6 +19,7 @@ class ProjectType extends AbstractType
             ->add('descriptionFr', null, [
                 'label'=>'Description (français)',
             ])
+            ->add('link')
             ->add('discipline', EntityType::class,  [
                 'choice_label'=>'name',
                 'class'=>Discipline::class

@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ProjectController!{% endblock %}
+{% block title %}Portfolio | Caroline de la Fouchardiere{% endblock %}
 
 {% block body %}
 <h1>Add project</h1>
@@ -11,7 +11,9 @@
     {{  form_row(formProject.name) }}
     {{  form_row(formProject.description) }}
 
-    {{  form_widget(formProject.description_fr) }}
+    {{  from_row(formProject.description_fr) }}
+    {{  form_row(formProject.link) }}
+
 
     <button class="btn btn-primary" type="submit">OK</button>
     {{  form_end(formProject) }}

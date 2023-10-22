@@ -1,18 +1,18 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ProjectController!{% endblock %}
+{% block title %}Portfolio | Caroline de la Fouchardiere{% endblock %}
 
 {% block body %}
 
 
 <div class="sticky-top my-4">
-    <a href="{{ path('app_project') }}" class="btn btn-link text-decoration-none ps-0 ms-0 text-black">
+    <a href="{{ path('app_project') }}" class="btn btn-link text-decoration-none ps-0 ms-0 text-black visbyB">
         All
     </a>
 
     {% for discipline in disciplines %}
         <span>|</span>
-        <a href="{{ path('app_project_discipline', {name:discipline.name}) }}" class="btn btn-link text-decoration-none text-black">
+        <a href="{{ path('app_project_discipline', {name:discipline.name}) }}" class="btn visbyB btn-link text-decoration-none text-black">
 
             {{ discipline.name }}
         </a>
@@ -20,9 +20,7 @@
 
 </div>
 
-
-
-<div class="row">
+    <div class="row">
     {% for project in projects %}
         <div class="cont col-3 p-0 " >
             <a href="{{ path('show_project', {id:project.id}) }}" >

@@ -31,6 +31,9 @@ class Project
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $description_fr = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $link = null;
+
 
     public function __construct()
     {
@@ -116,6 +119,18 @@ class Project
     public function setDescriptionFr(?string $description_fr): static
     {
         $this->description_fr = $description_fr;
+
+        return $this;
+    }
+
+    public function getLink(): ?string
+    {
+        return $this->link;
+    }
+
+    public function setLink(?string $link): static
+    {
+        $this->link = $link;
 
         return $this;
     }

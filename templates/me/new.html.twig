@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Portfolio | Caroline de la Fouchardiere{% endblock %}
+
+{% block body %}
+
+    {{ form_start(formMe) }}
+    {{ form_row(formMe.intro) }}
+    {{ form_row(formMe.intro_fr) }}
+    <button class="btn btn-primary" type="submit">OK</button>
+
+    {{ form_end(formMe) }}
+
+
+{% endblock %}
