@@ -10,4 +10,4 @@ home:
 btn:
   edit: "editer"
   images: "modifier images"
-  delete: "supprimer"
+  delete: "X"

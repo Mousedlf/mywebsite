@@ -3,11 +3,6 @@
 {% block title %}Portfolio | Caroline de la Fouchardiere{% endblock %}
 
 {% block body %}
-    {% if is_granted('ROLE_ADMIN') %}
-        <a href="{{ path('edit_project', {id:project.id}) }}" class="badge rounded-pill text-bg-warning">{{ "btn.edit"|trans }}</a>
-        <a href="{{ path('delete_project', {id:project.id}) }}" class="badge rounded-pill text-bg-danger">{{ "btn.delete"|trans }}</a>
-        <a href="{{ path('add_image', {id:project.id}) }}" class="badge rounded-pill text-bg-warning">{{ "btn.images"|trans }}</a>
-    {% endif %}
 
     <div class="col-9">
         <h1 class="mt-5">{{ project.name }}</h1>

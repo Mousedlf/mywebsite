@@ -11,7 +11,7 @@
     </a>
 
     {% for discipline in disciplines %}
-        <span>|</span>
+        <span style="color: #0000ff">|</span>
         <a href="{{ path('app_project_discipline', {name:discipline.name}) }}" class="btn visbyB btn-link text-decoration-none text-black">
 
             {{ discipline.name }}
@@ -22,7 +22,7 @@
 
     <div class="row">
     {% for project in projects %}
-        <div class="cont col-3 p-0 " >
+        <div class="cont col-md-3 p-0 " >
             <a href="{{ path('show_project', {id:project.id}) }}" >
 
             {% if project.images|length > 0 %}

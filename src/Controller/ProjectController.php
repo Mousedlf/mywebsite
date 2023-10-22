@@ -35,6 +35,14 @@ class ProjectController extends AbstractController
         ]);
     }
 
+    #[Route('/admin', name: 'app_admin_index', methods: ['GET'])]
+    public function indexAdmin(ProjectRepository $projectRepository): Response
+    {
+        return $this->render('admin/index.html.twig', [
+            'projects' => $projectRepository->findAll(),
+        ]);
+    }
+
     #[Route('/{id}', name: 'show_project')]
     public function show(Project $project, Request $request): Response
     {
@@ -66,7 +74,7 @@ class ProjectController extends AbstractController
             $manager->persist($project);
             $manager->flush();
 
-            return $this->redirectToRoute('app_project');
+            return $this->redirectToRoute('app_admin_index');
         }
 
 
@@ -85,7 +93,7 @@ class ProjectController extends AbstractController
             $manager->flush();
 
         }
-        return $this->redirectToRoute('app_project');
+        return $this->redirectToRoute('app_admin_index');
 
     }
 

@@ -4,7 +4,12 @@
 
 {% block body %}
 
+
     <h1>Caroline de la Fouchardiere</h1>
+    {% if is_granted('ROLE_ADMIN') %}
+        <span><a href="{{ path('edit_me', {id:1}) }}" class="btn btn-warning">{{ 'btn.edit'|trans }}</a></span>
+    {% endif %}
+
 
 <div class="col-9">
     {% if locale == 'fr' %}

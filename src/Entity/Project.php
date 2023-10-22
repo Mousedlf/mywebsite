@@ -25,7 +25,7 @@ class Project
     #[ORM\ManyToOne(inversedBy: 'projects')]
     private ?Discipline $discipline = null;
 
-    #[ORM\OneToMany(mappedBy: 'project', targetEntity: Image::class)]
+    #[ORM\OneToMany(mappedBy: 'project', targetEntity: Image::class, cascade: ['remove'])]
     private Collection $images;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]

@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/image')]
+#[Route('{_locale}/image/admin')]
 class ImageController extends AbstractController
 {
     #[Route('/{id}', name: 'app_image')]
@@ -20,7 +20,7 @@ class ImageController extends AbstractController
         $image = new Image();
         $formImage=$this->createForm(ImageType::class, $image);
 
-        return $this->renderForm('image/index.html.twig', [
+        return $this->render('image/index.html.twig', [
             'project' => $project,
             'formImage'=>$formImage
         ]);

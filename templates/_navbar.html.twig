@@ -9,6 +9,10 @@
                 <a href="{{ path('app_project') }}" class="btn text-uppercase kalam">{{ "navbar.projects"|trans }}</a>
                 <a href="{{ path('app_me') }}" class="btn text-uppercase kalam">{{ "navbar.me"|trans }}</a>
 
+                {% if is_granted('ROLE_ADMIN') %}
+                    <a href="{{ path('app_admin_index') }}" class="btn text-uppercase kalam">Admin</a>
+                {% endif %}
+
             </div>
 
 

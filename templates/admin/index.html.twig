@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Project index{% endblock %}
+
+{% block body %}
+    <h1>Project index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Description_fr</th>
+                <th>Link</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for project in projects %}
+            <tr>
+                <td>{{ project.name }}</td>
+                <td>{{ project.description|slice(0, 150) ~ '...'  }}</td>
+                <td>{{ project.descriptionFr|slice(0, 150) ~ '...'  }}</td>
+                <td>{{ project.link }}</td>
+                <td>
+                    <div class="d-flex">
+                        <a href="{{ path('edit_project', {id:project.id}) }}" class="btn btn-warning btn-sm m-1">{{ "btn.edit"|trans }}</a>
+                        {{ include('admin/_delete_form.html.twig') }}
+                    </div>
+                    <a href="{{ path('app_image', {id:project.id}) }}" class="btn btn-warning btn-sm m-1">{{ "btn.images"|trans }}</a>
+
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

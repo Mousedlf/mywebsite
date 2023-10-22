@@ -10,4 +10,4 @@ home:
 btn:
   edit: "edit"
   images: "manage images"
-  delete: "remove"
+  delete: "X"
