@@ -1,13 +1,18 @@
 
-    <nav class="sticky-top navbar navbar-expand-lg mx-5 bg-white">
+    <nav class="sticky-top navbar navbar-expand-lg mx-md-5">
         <div class="container-fluid d-flex justify-content-between mt-md-3">
 
             <div class="">
                 <a class="navbar-brand" href="{{ path('app_home') }}">
                     <img src="{{ asset('placeholder.svg') }}" alt="my little mouse logo" height="50px">
                 </a>
-                <a href="{{ path('app_project') }}" class="btn text-uppercase kalam">{{ "navbar.projects"|trans }}</a>
-                <a href="{{ path('app_me') }}" class="btn text-uppercase kalam">{{ "navbar.me"|trans }}</a>
+
+                {% if app.current_route != 'app_home' %}
+
+                <a href="{{ path('app_project') }}" class="btn btn-bleu helsinki">{{ "navbar.projects"|trans }}</a>
+                <a href="{{ path('app_me') }}" class="btn btn-bleu helsinki">{{ "navbar.me"|trans }}</a>
+
+                {% endif %}
 
                 {% if is_granted('ROLE_ADMIN') %}
                     <a href="{{ path('app_admin_index') }}" class="btn text-uppercase kalam">Admin</a>
@@ -24,10 +29,10 @@
             <div class="">
                 {% if app.request.getLocale() == 'en'%}
                     {% set uri = uri|replace({'/en/': "/fr/"}) %}
-                    <a href="{{ uri }}" class="text-decoration-none btn text-primary">FR</a>
+                    <a href="{{ uri }}" class="text-decoration-none fs-4 ">🇫🇷</a>
                 {% elseif app.request.getLocale() == 'fr' %}
                     {% set uri = uri|replace({'/fr/': "/en/"}) %}
-                    <a href="{{ uri }}" class="text-decoration-none btn text-primary">EN</a>
+                    <a href="{{ uri }}" class="text-decoration-none fs-4">🇬🇧</a>
                 {% endif %}
 
             </div>

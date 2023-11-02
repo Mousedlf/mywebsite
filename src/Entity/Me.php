@@ -20,6 +20,12 @@ class Me
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $intro_fr = null;
 
+    #[ORM\Column(type: Types::TEXT, nullable: true)]
+    private ?string $services = null;
+
+    #[ORM\Column(type: Types::TEXT, nullable: true)]
+    private ?string $services_fr = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -46,6 +52,30 @@ class Me
     public function setIntroFr(?string $intro_fr): static
     {
         $this->intro_fr = $intro_fr;
+
+        return $this;
+    }
+
+    public function getServices(): ?string
+    {
+        return $this->services;
+    }
+
+    public function setServices(?string $services): static
+    {
+        $this->services = $services;
+
+        return $this;
+    }
+
+    public function getServicesFr(): ?string
+    {
+        return $this->services_fr;
+    }
+
+    public function setServicesFr(?string $services_fr): static
+    {
+        $this->services_fr = $services_fr;
 
         return $this;
     }

@@ -6,12 +6,21 @@
 
     <h1>Edit </h1>
 
-    {{ form_start(formMe) }}
-    {{ form_row(formMe.intro) }}
-    {{ form_row(formMe.intro_fr) }}
-    <button class="btn btn-primary" type="submit">OK</button>
+    <div class="row">
+        {{ form_start(formMe) }}
 
-    {{ form_end(formMe) }}
+            {{ form_row(formMe.intro) }}
+            {{ form_row(formMe.services) }}
+
+            {{ form_row(formMe.introFr) }}
+            {{ form_row(formMe.servicesFr) }}
+
+
+        <button class="btn btn-primary" type="submit">OK</button>
+
+        {{ form_end(formMe) }}
+
+    </div>
 
 
 {% endblock %}

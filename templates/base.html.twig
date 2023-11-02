@@ -3,8 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Portfolio | Caroline de la Fouchardiere!{% endblock %}</title>
-        <meta name="description" content="ici phrase top descriptive" />
-        <meta name="keywords" content="webdesign, web development, mot-clé 3"/>
+        <meta name="description" content="Bienvenue sur mon portfolio. Je suis Caroline, une étudiante en développement web avec un baggage en webdesign." />
+        <meta name="keywords" content="webdesign, web development, portfolio"/>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
 
         {% block stylesheets %}
@@ -24,13 +24,11 @@
             <div class="container">
             {% block body %}
             {% endblock %}
-
-
             </div>
 
     {% if app.current_route == 'app_home' %}
-        <svg viewBox="0 0 1920 900">
-            <path class="" fill="none" stroke="#0000ff" stroke-width="7" d="M0,169.95c512.05,73.74,481.93-34.31,449.28-9.77c-45.68,34.33,328.46,26.6,429.19,41.32
+        <svg viewBox="0 0 1920 400">
+            <path class="path" fill="none" stroke="#0000ff" stroke-width="7" d="M0,169.95c512.05,73.74,481.93-34.31,449.28-9.77c-45.68,34.33,328.46,26.6,429.19,41.32
 	c66.86,9.77,39.79,57.77,31.23,54.17c-37.66-15.83,29.69-161.23,28.5-160.91c-47.33,12.73-65.38-73.95-25.59-87.58
 	c15.02-5.14,41.14,10.05,36.16,24.34c-0.35,0.99,0.62,1.9,1.55,1.45c18.89-9.32,42.25-8.71,60.6,1.68c0.72,0.41,1.61-0.04,1.71-0.87
 	c2.82-25.08,38.8-30.63,54.66-1.04c30.35,56.62-17.17,73.68-37.93,66.76c37.52,87.12,46.34,117.35,19.16,138.74
@@ -48,6 +46,7 @@
 
        <img class="path" src="{{ asset('noot2.svg') }}" alt="" width="100%">
     </div>#}
+
 
     </body>
 </html>

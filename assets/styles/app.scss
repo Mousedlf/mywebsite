@@ -22,33 +22,49 @@
   font-family: 'Visby Bold', sans-serif;
 }
 
-h1{
+.helsinki{
   font-family: 'Helsinki', sans-serif;
-  font-size: 3rem;
-  margin-top: 4rem;
-  margin-bottom: 2rem;
-}
-
-h2,h4{
-  font-family: 'Visby Bold', sans-serif;
-}
-
-p{
-  font-size: 1.25rem;
-}
-
-a:hover{
-  font-family: "Kalam", sans-serif;
-  font-weight: 700;
-  color: #0000ff !important;
 }
 
 .kalam{
   font-family: "Visby Bold", sans-serif;
 }
 
+
+h1{
+  font-family: 'Helsinki', sans-serif;
+  font-size: 3rem;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  color: #0000ff;
+}
+
+h2,h3,h4{
+  font-family: 'Visby Bold', sans-serif;
+  margin-top: 3rem;
+}
+
+p, a{
+  font-size: 1.25rem;
+}
+
+.btn:hover{
+  font-family: "Helsinki", sans-serif;
+  //color: #0000ff !important;
+  color: black
+}
+
+.btn-bleu:hover{
+  color: #0000ff !important;
+}
+
+
 .text-primary{
   color: #0000ff !important;
+}
+.btn-primary{
+  background-color: #0000ff !important;
+  color:white;
 }
 
 
@@ -57,7 +73,7 @@ a:hover{
 .path {
   stroke-dasharray: 4200;
   stroke-dashoffset: 4400;
-  animation: dash 14s linear alternate infinite;
+  animation: dash 7s linear alternate 20;
 }
 
 @keyframes dash {
@@ -91,7 +107,7 @@ a:hover{
   width: 100%;
   opacity: 0;
   transition: .5s ease;
-  background-color: #ffffff;
+  background-color: #9CC3D5;
   border: solid 5px #0000ff;
 }
 

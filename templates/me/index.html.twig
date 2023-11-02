@@ -5,34 +5,38 @@
 {% block body %}
 
 
-    <h1>Caroline de la Fouchardiere</h1>
+
     {% if is_granted('ROLE_ADMIN') %}
         <span><a href="{{ path('edit_me', {id:1}) }}" class="btn btn-warning">{{ 'btn.edit'|trans }}</a></span>
     {% endif %}
 
+   <div class="row">
+       <div class="col-md-8 ps-md-5 mb-5">
+           <h1 class="" style="border-bottom: 3px solid #0000ff">{{"me.about"|trans}}</h1>
+           {% if locale == 'fr' %}
+               <p class="">{{ me[0].introFr}}</p>
+               <p class="">{{ me[0].servicesFr}}</p>
 
-<div class="col-9">
-    {% if locale == 'fr' %}
-        <p>{{ me[0].introFr}}</p>
-    {% else %}
-        <p>{{ me[0].intro}}</p>
+           {% else %}
+               <p>{{ me[0].intro}}</p>
+               <p>{{ me[0].services}}</p>
 
-    {% endif %}
+           {% endif %}
+           <div class="pt-4">
+               <i class="fa-solid fa-arrow-right-long" style="color:#0000ff"></i>
+               <a href="" class="btn text-decoration-none kalam fs-4"> {{ "btn.resume"|trans }}</a>
+           </div>
+       </div>
+       </div>
 
-    <p>[...]</p>
-</div>
 
 
 
-    <div class="mt-5 pt-5">
-        <a class="btn text-decoration-none " href="https://github.com/Mousedlf" target="_blank">
-            <i class="fs-1 fa-brands fa-github"></i>
-        </a>
-        <a class="btn text-decoration-none " href="https://www.linkedin.com/in/caroline-de-la-fouchardiere-289a5b1b7?originalSubdomain=fr" target="_blank">
-            <i class="fs-1 fa-brands fa-linkedin"></i>
-        </a>
+   </div>
 
-    </div>
+
+
+
 
 
 

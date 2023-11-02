@@ -13,7 +13,9 @@ class MeType extends AbstractType
     {
         $builder
             ->add('intro')
-            ->add('intro_fr')
+            ->add('introFr')
+            ->add('services')
+            ->add('servicesFr')
         ;
     }
 

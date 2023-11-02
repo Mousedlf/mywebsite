@@ -11,3 +11,6 @@ btn:
   edit: "edit"
   images: "manage images"
   delete: "X"
+  resume: "see my resumé"
+me:
+  about: "About me"
