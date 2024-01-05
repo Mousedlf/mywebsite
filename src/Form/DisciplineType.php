@@ -13,6 +13,7 @@ class DisciplineType extends AbstractType
     {
         $builder
             ->add('name')
+            ->add('nameFr')
         ;
     }
 

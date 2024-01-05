@@ -10,6 +10,7 @@
             <tr>
                 <th>Id</th>
                 <th>Name</th>
+                <th>Name Fr</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -18,9 +19,10 @@
             <tr>
                 <td>{{ discipline.id }}</td>
                 <td>{{ discipline.name }}</td>
+                <td>{{ discipline.nameFr }}</td>
                 <td>
-                    <a href="{{ path('app_discipline_show', {'id': discipline.id}) }}">show</a>
-                    <a href="{{ path('app_discipline_edit', {'id': discipline.id}) }}">edit</a>
+{#                    <a href="{{ path('app_discipline_show', {'id': discipline.id}) }}" class="btn btn-link">show</a>#}
+                    <a href="{{ path('app_discipline_edit', {'id': discipline.id}) }}" class="btn btn-warning">edit</a>
                 </td>
             </tr>
         {% else %}
@@ -31,5 +33,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_discipline_new') }}">Create new</a>
+    <a href="{{ path('app_discipline_new') }}" class="btn btn-primary">Create new</a>
 {% endblock %}

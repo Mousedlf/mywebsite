@@ -21,6 +21,9 @@ class Discipline
     #[ORM\OneToMany(mappedBy: 'discipline', targetEntity: Project::class)]
     private Collection $projects;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $nameFr = null;
+
     public function __construct()
     {
         $this->projects = new ArrayCollection();
@@ -69,6 +72,18 @@ class Discipline
                 $project->setDiscipline(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getNameFr(): ?string
+    {
+        return $this->nameFr;
+    }
+
+    public function setNameFr(?string $nameFr): static
+    {
+        $this->nameFr = $nameFr;
 
         return $this;
     }

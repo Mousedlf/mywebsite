@@ -5,22 +5,33 @@
 {% block body %}
 
 
-<div class="sticky-top my-md-4">
+<div class="sticky-top mb-md-4 text-end pt-5 pb-2">
     <a href="{{ path('app_project') }}" class="btn btn-link text-decoration-none ps-0 ms-0 text-black visbyB">
-        All
+        {% if locale == 'fr' %}
+            Tous
+        {% else %}
+            All
+        {% endif %}
     </a>
 
     {% for discipline in disciplines %}
-        <span style="color: #0000ff">|</span>
-        <a href="{{ path('app_project_discipline', {name:discipline.name}) }}" class="btn visbyB btn-link text-decoration-none text-black">
 
-            {{ discipline.name }}
-        </a>
+        <span style="color: #0000ff">|</span>
+        {% if locale == 'fr' %}
+            <a href="{{ path('app_project_discipline', {name:discipline.nameFr}) }}" class="btn visbyB btn-link text-decoration-none text-black">
+                {{ discipline.nameFr }}
+            </a>
+        {% else %}
+            <a href="{{ path('app_project_discipline', {name:discipline.name}) }}" class="btn visbyB btn-link text-decoration-none text-black">
+                {{ discipline.name }}
+            </a>
+        {% endif %}
+
     {% endfor %}
 
 </div>
 
-    <div class="row">
+    <div class="row mb-5">
     {% for project in projects|sort((b, a) => a.customOrder <=> b.customOrder) %}
         <div class="cont col-md-4 p-md-0" >
             <a href="{{ path('show_project', {id:project.id}) }}" >
