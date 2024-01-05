@@ -21,10 +21,14 @@
     {{ include('_navbar.html.twig') }}
 
 
-            <div class="container">
+            <div     {% if app.current_route == 'app_admin_index' %}
+                    class=" mx-4"
+                    {% else %} class="container"
+            {% endif %}>
             {% block body %}
             {% endblock %}
             </div>
+
 
     {% if app.current_route == 'app_home' %}
         <svg viewBox="0 0 1920 400">
@@ -39,14 +43,7 @@
 	c62.6,12.65,143.04-162.19,257.45-190.99c32.12-8.09,32.37,24.42,22.38,35.09c-0.6,0.64-1.28,1.23-2.02,1.76
 	C1773.24,176.1,1792.33,71.71,1920,75"/>
         </svg>
-
     {% endif %}
-
-{#    <div class="position-absolute bottom-0 left-0 ">
-
-       <img class="path" src="{{ asset('noot2.svg') }}" alt="" width="100%">
-    </div>#}
-
 
     </body>
 </html>

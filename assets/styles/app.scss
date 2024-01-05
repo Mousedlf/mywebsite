@@ -1,5 +1,5 @@
 @import "~bootstrap/scss/bootstrap";
-@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;600;700;800&display=swap');
 
 @font-face {
   font-family: 'Visby Heavy';
@@ -33,20 +33,44 @@
 
 h1{
   font-family: 'Helsinki', sans-serif;
-  font-size: 3rem;
+  font-size: 2rem;
   margin-top: 4rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   color: #0000ff;
 }
 
-h2,h3,h4{
-  font-family: 'Visby Bold', sans-serif;
-  margin-top: 3rem;
+@media(min-width: 80rem) {
+  h1{
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
 }
 
-p, a{
-  font-size: 1.25rem;
+
+h2,h3,h4{
+  font-family: 'Visby Bold', sans-serif;
+  font-size: 1.5rem;
+  margin-top: 2rem;
 }
+
+@media(min-width: 80rem) {
+  h2,h3,h4{
+    font-size: 2rem;
+    margin-top: 3rem;
+  }
+}
+
+
+p, a{
+  font-size: 1rem;
+}
+
+@media(min-width: 80rem) {
+  p, a{
+    font-size: 1.25rem;
+  }
+}
+
 
 .btn:hover{
   font-family: "Helsinki", sans-serif;
@@ -107,8 +131,8 @@ p, a{
   width: 100%;
   opacity: 0;
   transition: .5s ease;
-  background-color: #9CC3D5;
-  border: solid 5px #0000ff;
+  background-color: rgba(0, 0, 0, 0.75);
+  //border: solid 5px #9CC3D5;
 }
 
 .cont:hover .overlay {
@@ -116,9 +140,9 @@ p, a{
 }
 
 .text {
-  color: #0000ff;
-  font-family: 'Helsinki', sans-serif;
-  font-size: 20px;
+  color: white;
+  font-family: 'Archivo', sans-serif;
+  font-weight: 700;
   position: absolute;
   top: 50%;
   left: 50%;

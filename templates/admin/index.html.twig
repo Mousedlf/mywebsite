@@ -9,9 +9,15 @@
         <thead>
             <tr>
                 <th>Name</th>
+                <th>Subtitle</th>
+                <th>Subtitle FR</th>
+                <th>Year</th>
                 <th>Description</th>
-                <th>Description_fr</th>
+                <th>Description FR</th>
                 <th>Link</th>
+                <th>Github</th>
+                <th>Order</th>
+                <th>Img display</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -19,9 +25,15 @@
         {% for project in projects %}
             <tr>
                 <td>{{ project.name }}</td>
+                <td>{{ project.subtitle }}</td>
+                <td>{{ project.subtitleFr }}</td>
+                <td>{{ project.year }}</td>
                 <td>{{ project.description|slice(0, 150) ~ '...'  }}</td>
                 <td>{{ project.descriptionFr|slice(0, 150) ~ '...'  }}</td>
                 <td>{{ project.link }}</td>
+                <td>{{ project.github }}</td>
+                <td>{{ project.customOrder }}</td>
+                <td>{{ project.imageDisplay }}</td>
                 <td>
                     <div class="d-flex">
                         <a href="{{ path('edit_project', {id:project.id}) }}" class="btn btn-warning btn-sm m-1">{{ "btn.edit"|trans }}</a>

@@ -15,7 +15,8 @@
                 {% endif %}
 
                 {% if is_granted('ROLE_ADMIN') %}
-                    <a href="{{ path('app_admin_index') }}" class="btn text-uppercase kalam">Admin</a>
+                    <a href="{{ path('app_admin_index') }}" class="btn text-uppercase kalam">Manage projects</a>
+                    <a href="{{ path('app_discipline_index') }}" class="btn text-uppercase kalam">Manage disciplines</a>
                 {% endif %}
 
             </div>

@@ -4,7 +4,7 @@
 
 {% block body %}
 
-    <div class="col-9">
+    <div class="col-md-9">
         <h1 class="mt-5">{{ project.name }}</h1>
 
 
@@ -21,17 +21,46 @@
                 <a class="text-decoration-none text-primary fw-bold" target="_blank" href="{{ project.link }}">{{ project.link }}</a>
             </p>
         {% endif %}
+        {% if project.github is not null %}
+            <p>
+
+                <a class="text-decoration-none text-primary fw-bold" target="_blank" href="{{ project.github }}">
+                    <i class="fs-2 me-2 fa-brands fa-github"></i>
+                    {{ project.github }}
+                </a>
+            </p>
+        {% endif %}
     </div>
 
 
+    {% if project.imageDisplay == 0 %}
+        {% elseif project.imageDisplay == 1 %}
+            <div class="row mt-5">
+                {% for image in project.images  %}
+                    <div class="card col">
+                        <img src="{{ vich_uploader_asset(image, 'imageFile')}}"  alt="">
+                    </div>
+                {% endfor %}
+            </div>
+        {% elseif project.imageDisplay == 2 %}
+            <div class="row mt-5 row-cols-md-2">
+                {% for image in project.images %}
+                    <div class="card col">
+                        <img src="{{ vich_uploader_asset(image, 'imageFile')}}"  alt="">
+                    </div>
+                {% endfor %}
+            </div>
+        {% elseif project.imageDisplay == 3 %}
+            <div class="row mt-5 row-cols-md-3">
+                {% for image in project.images %}
+                    <div class="card col">
+                        <img src="{{ vich_uploader_asset(image, 'imageFile')}}"  alt="">
+                    </div>
+                {% endfor %}
+            </div>
+    {% endif %}
 
 
-    <div class="row mt-5">
-        <div class="card col-4">images </div>
-        <div class="card col-4">images </div>
-        <div class="card col-4">images </div>
-
-    </div>
 {#
     {% for image in project.images %}
         <div class="card">

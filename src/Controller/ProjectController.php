@@ -23,6 +23,8 @@ class ProjectController extends AbstractController
     public function index(ProjectRepository $projectRepository, DisciplineRepository $disciplineRepository, Discipline $discipline=null, Request $request): Response
     {
         $disciplines = $disciplineRepository->findAll();
+        $locale = $request->getLocale();
+
 
         if($discipline){
             $projects=$projectRepository->findBy(['discipline' => $discipline]);
@@ -30,7 +32,8 @@ class ProjectController extends AbstractController
 
         return $this->render('project/index.html.twig', [
             'projects'=>$projects,
-            'disciplines'=>$disciplines
+            'disciplines'=>$disciplines,
+            'locale'=>$locale
 
         ]);
     }

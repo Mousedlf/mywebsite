@@ -34,6 +34,24 @@ class Project
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $link = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $subtitle = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $year = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?int $customOrder = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $subtitleFr = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $github = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?int $imageDisplay = null;
+
 
     public function __construct()
     {
@@ -134,6 +152,79 @@ class Project
 
         return $this;
     }
+
+    public function getSubtitle(): ?string
+    {
+        return $this->subtitle;
+    }
+
+    public function setSubtitle(?string $subtitle): static
+    {
+        $this->subtitle = $subtitle;
+
+        return $this;
+    }
+
+    public function getYear(): ?string
+    {
+        return $this->year;
+    }
+
+    public function setYear(?string $year): static
+    {
+        $this->year = $year;
+
+        return $this;
+    }
+
+    public function getCustomOrder(): ?int
+    {
+        return $this->customOrder;
+    }
+
+    public function setCustomOrder(?int $customOrder): static
+    {
+        $this->customOrder = $customOrder;
+
+        return $this;
+    }
+
+    public function getSubtitleFr(): ?string
+    {
+        return $this->subtitleFr;
+    }
+
+    public function setSubtitleFr(?string $subtitleFr): static
+    {
+        $this->subtitleFr = $subtitleFr;
+
+        return $this;
+    }
+
+    public function getGithub(): ?string
+    {
+        return $this->github;
+    }
+
+    public function setGithub(?string $github): static
+    {
+        $this->github = $github;
+
+        return $this;
+    }
+
+    public function getImageDisplay(): ?int
+    {
+        return $this->imageDisplay;
+    }
+
+    public function setImageDisplay(?int $imageDisplay): static
+    {
+        $this->imageDisplay = $imageDisplay;
+
+        return $this;
+    }
+
 
 
 }
