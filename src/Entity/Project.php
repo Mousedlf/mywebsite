@@ -52,6 +52,12 @@ class Project
     #[ORM\Column(nullable: true)]
     private ?int $imageDisplay = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $figma = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $xd = null;
+
 
     public function __construct()
     {
@@ -221,6 +227,30 @@ class Project
     public function setImageDisplay(?int $imageDisplay): static
     {
         $this->imageDisplay = $imageDisplay;
+
+        return $this;
+    }
+
+    public function getFigma(): ?string
+    {
+        return $this->figma;
+    }
+
+    public function setFigma(?string $figma): static
+    {
+        $this->figma = $figma;
+
+        return $this;
+    }
+
+    public function getXd(): ?string
+    {
+        return $this->xd;
+    }
+
+    public function setXd(?string $xd): static
+    {
+        $this->xd = $xd;
 
         return $this;
     }

@@ -5,7 +5,35 @@
 {% block body %}
 
     <div class="col-md-9">
-        <h1 class="mt-5">{{ project.name }}</h1>
+
+        <div class="d-flex align-items-baseline">
+            <h1 class="mt-5 me-5">{{ project.name }}</h1>
+            <div class="d-flex align-items-center">
+
+                {% if project.github is not null %}
+                    <a class=" btn-bleu" target="_blank" href="{{ project.github }}">
+                        <i class="fs-2 me-2 fa-brands fa-github"></i>
+                    </a>
+                {% endif %}
+
+                {% if project.figma is not null %}
+                    <a class=" btn-bleu" target="_blank" href="{{ project.link }}">
+                        <p>F</p>
+                    </a>
+                {% endif %}
+                {% if project.xd is not null %}
+                    <a class=" btn-bleu" target="_blank" href="{{ project.link }}">
+                        <p>XD</p>
+                    </a>
+                {% endif %}
+                {% if project.link is not null %}
+                    <a class=" btn-bleu" target="_blank" href="{{ project.link }}">
+                        <i class="fs-3 fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                {% endif %}
+            </div>
+
+        </div>
 
 
         {% if locale == 'fr' %}
@@ -15,21 +43,8 @@
         {% endif %}
 
 
-        {% if project.link is not null %}
-            <p>
-                <i class="fa-solid fa-arrow-right-long me-2 text-primary"></i>
-                <a class="text-decoration-none text-primary fw-bold" target="_blank" href="{{ project.link }}">{{ project.link }}</a>
-            </p>
-        {% endif %}
-        {% if project.github is not null %}
-            <p>
 
-                <a class="text-decoration-none text-primary fw-bold" target="_blank" href="{{ project.github }}">
-                    <i class="fs-2 me-2 fa-brands fa-github"></i>
-                    {{ project.github }}
-                </a>
-            </p>
-        {% endif %}
+
     </div>
 
 

@@ -10,28 +10,36 @@
             <tr>
                 <th>Name</th>
                 <th>Subtitle</th>
-                <th>Subtitle FR</th>
-                <th>Year</th>
+               <th>Year</th>
                 <th>Description</th>
                 <th>Description FR</th>
-                <th>Link</th>
-                <th>Github</th>
+                <th>Links</th>
                 <th>Order</th>
                 <th>Img display</th>
                 <th>actions</th>
             </tr>
         </thead>
         <tbody>
-        {% for project in projects %}
+        {% for project in projects|sort((b, a) => a.customOrder <=> b.customOrder) %}
             <tr>
                 <td>{{ project.name }}</td>
-                <td>{{ project.subtitle }}</td>
-                <td>{{ project.subtitleFr }}</td>
+                <td><ul>
+                        <li>{{ project.subtitle }}</li>
+                        <li>{{ project.subtitleFr }}</li>
+                    </ul>
+                </td>
                 <td>{{ project.year }}</td>
                 <td>{{ project.description|slice(0, 150) ~ '...'  }}</td>
                 <td>{{ project.descriptionFr|slice(0, 150) ~ '...'  }}</td>
-                <td>{{ project.link }}</td>
-                <td>{{ project.github }}</td>
+                <td><ul>
+                        <li>www: {{ project.link }}</li>
+                        <li>G:{{ project.github }}</li>
+                        <li>F: {{ project.figma }}</li>
+                        <li>xd: {{ project.xd }}</li>
+                    </ul>
+                </td>
+
+
                 <td>{{ project.customOrder }}</td>
                 <td>{{ project.imageDisplay }}</td>
                 <td>

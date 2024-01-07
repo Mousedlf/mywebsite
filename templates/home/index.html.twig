@@ -8,20 +8,13 @@
     <h2 class="mt-0">{{ "home.job"|trans }}</h2>
 
     <div class="d-flex flex-column flex-md-row mt-3 mt-md-5 pt-3">
-        <div class="me-5">
-            <i class="fa-solid fa-arrow-right-long" style="color:#0000ff"></i>
-            <a href="{{ path('app_project') }}" class="btn text-decoration-none kalam fs-4">{{ "home.cta.projects"|trans }}</a>
+            <a href="{{ path('app_project') }}" class="btn btn-primary text-decoration-none fs-5">{{ "home.cta.projects"|trans }}</a>
+            <a href="{{ path('app_me') }}" class="btn btn-secondary text-decoration-none fs-5">{{ "home.cta.me"|trans }}</a>
 
-        </div>
-        <div class="">
-            <i class="fa-solid fa-arrow-right-long" style="color:#0000ff"></i>
-            <a href="{{ path('app_me') }}" class="btn text-decoration-none kalam fs-4">{{ "home.cta.me"|trans }}</a>
-
-        </div>
     </div>
 
     <div class="mt-5 pt-5">
-        <a class="btn btn-bleu text-decoration-none " href="https://github.com/Mousedlf" target="_blank">
+        <a class="btn btn-bleu text-decoration-none m-0" href="https://github.com/Mousedlf" target="_blank">
             <i class="fs-1 fa-brands fa-github"></i>
         </a>
         <a class="btn btn-bleu text-decoration-none " href="https://www.linkedin.com/in/caroline-de-la-fouchardiere-289a5b1b7?originalSubdomain=fr" target="_blank">

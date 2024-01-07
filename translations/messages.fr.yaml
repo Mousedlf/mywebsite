@@ -2,10 +2,10 @@ navbar:
   projects: 'Projets'
   me: "à propos "
 home:
-  me: "Hello, je suis Caroline"
+  me: "Je suis Caroline"
   job: "webdesigner, developpeur web et graphiste basée à Lyon, France"
   cta:
-    projects: "voir mes projets"
+    projects: "découvrir mes projets"
     me: "à propos de moi"
 btn:
   edit: "editer"
