@@ -11,17 +11,17 @@
   font-family: 'Visby Bold';
   src: url('VisbyBold.woff') format('woff');
 }
+//@font-face {
+//  font-family: 'Apercu Regular';
+//  src: url('apercu-regular.otf') format('otf');
+//}
+//@font-face {
+//  font-family: 'Apercu Bold';
+//  src: url('apercu-bold.otf') format('otf');
+//}
 @font-face {
-  font-family: 'Helsinki';
-  src: url('helsinki-webfont.woff') format('woff');
-}
-@font-face {
-  font-family: 'Apercu Regular';
-  src: url('apercu-regular.otf') format('otf');
-}
-@font-face {
-  font-family: 'Apercu Bold';
-  src: url('apercu-bold.otf') format('otf');
+  font-family: 'Urbancat';
+  src: url('urbancat.otf') format('otf');
 }
 
 .visbyB{
@@ -46,7 +46,7 @@
 // TEXT STYLES ----------------------------------------------------
 
 h1{
-  font-family: 'Apercu Bold', sans-serif;
+  font-family: 'Archivo', sans-serif;
   font-size: 3rem;
   font-weight: bold;
   text-transform: uppercase;
@@ -63,7 +63,7 @@ h1{
 }
 
 h2,h3,h4{
-  font-family: 'Apercu Regular', sans-serif;
+  font-family: 'Archivo', sans-serif;
   font-size: 1.5rem;
   margin-top: 2rem;
 }
