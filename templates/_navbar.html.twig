@@ -30,10 +30,10 @@
             <div class="">
                 {% if app.request.getLocale() == 'en'%}
                     {% set uri = uri|replace({'/en/': "/fr/"}) %}
-                    <a href="{{ uri }}" class="text-decoration-none fs-4 ">🇫🇷</a>
+                    <a href="{{ uri }}" class="text-decoration-none fs-4 "><img src="{{ asset('fr.png') }}" alt="" height="25px"></a>
                 {% elseif app.request.getLocale() == 'fr' %}
                     {% set uri = uri|replace({'/fr/': "/en/"}) %}
-                    <a href="{{ uri }}" class="text-decoration-none fs-4">🇬🇧</a>
+                    <a href="{{ uri }}" class="text-decoration-none fs-4" ><img src="{{ asset('eng.svg') }}" alt="" height="36px"></a>
                 {% endif %}
 
             </div>

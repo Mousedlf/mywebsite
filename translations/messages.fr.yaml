@@ -11,6 +11,6 @@ btn:
   edit: "editer"
   images: "modifier images"
   delete: "X"
-  resume: "voir mon CV"
+  resume: "mon CV"
 me:
   about: "à propos"

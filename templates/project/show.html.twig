@@ -76,12 +76,14 @@
     {% endif %}
 
 
-{#
+
     {% for image in project.images %}
-        <div class="card">
-            <img src="{{ vich_uploader_asset(image, 'imageFile') }}" alt="">
-        </div>
-    {% endfor %}#}
+        {% if image != project.images[0] %}
+            <div class="card">
+                <img src="{{ vich_uploader_asset(image, 'imageFile') }}" alt="">
+            </div>
+        {% endif %}
+    {% endfor %}
 
 
 

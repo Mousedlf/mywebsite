@@ -22,12 +22,14 @@ class ProjectType extends AbstractType
             ->add('descriptionFr', null, [
                 'label'=>'Description (français)',
             ])
-            ->add('link')
-            ->add('github')
             ->add('discipline', EntityType::class,  [
                 'choice_label'=>'name',
                 'class'=>Discipline::class
             ])
+            ->add('link')
+            ->add('github')
+            ->add('figma')
+            ->add('xd')
             ->add('customOrder')
             ->add('imageDisplay')
         ;
