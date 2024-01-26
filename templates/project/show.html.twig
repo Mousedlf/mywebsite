@@ -7,23 +7,32 @@
     <div class="col-md-9">
 
         <div class="d-flex align-items-baseline">
-            <h1 class="mt-5 me-5">{{ project.name }}</h1>
-            <div class="d-flex align-items-center">
+            <div class="">
+                <h1 class="mt-5 me-5">{{ project.name }}</h1>
+
+                {% if locale == 'fr' %}
+                    <p class="text-secondary">{{ project.subtitleFr }} - {{ project.year }}</p>
+                {% else %}
+                    <p class="text-secondary">{{ project.subtitle }} - {{ project.year }}</p>
+                {% endif %}
+            </div>
+
+            <div class="d-flex">
 
                 {% if project.github is not null %}
                     <a class=" btn-bleu" target="_blank" href="{{ project.github }}">
-                        <i class="fs-2 me-2 fa-brands fa-github"></i>
+                        <i class="fs-2  me-2 fa-brands fa-github"></i>
                     </a>
                 {% endif %}
 
                 {% if project.figma is not null %}
-                    <a class=" btn-bleu" target="_blank" href="{{ project.link }}">
-                        <p>F</p>
+                    <a class=" btn-bleu" target="_blank" href="{{ project.figma }}">
+                        <img src="{{ asset("logo-figma.svg") }}" height="30" class="me-2"></img>
                     </a>
                 {% endif %}
                 {% if project.xd is not null %}
-                    <a class=" btn-bleu" target="_blank" href="{{ project.link }}">
-                        <p>XD</p>
+                    <a class=" btn-bleu" target="_blank" href="{{ project.xd }}">
+                        <img src="{{ asset("logo-xd.png") }}" height="30" class="me-4"></img>
                     </a>
                 {% endif %}
                 {% if project.link is not null %}
@@ -49,41 +58,42 @@
 
 
     {% if project.imageDisplay == 0 %}
+
         {% elseif project.imageDisplay == 1 %}
-            <div class="row mt-5">
-                {% for image in project.images  %}
-                    <div class="card col">
-                        <img src="{{ vich_uploader_asset(image, 'imageFile')}}"  alt="">
+            {% for image in project.images %}
+                {% if image != project.images[0] %}
+                    <div class="card border-0 p-1">
+                        <img src="{{ vich_uploader_asset(image, 'imageFile') }}" alt="">
                     </div>
-                {% endfor %}
-            </div>
+                {% endif %}
+            {% endfor %}
+
         {% elseif project.imageDisplay == 2 %}
-            <div class="row mt-5 row-cols-md-2">
+            <div class="row mt-5 row-cols-md-2 ">
                 {% for image in project.images %}
-                    <div class="card col">
-                        <img src="{{ vich_uploader_asset(image, 'imageFile')}}"  alt="">
-                    </div>
+                    {% if image != project.images[0] %}
+                        <div class="card border-0 col p-1">
+                            <img src="{{ vich_uploader_asset(image, 'imageFile') }}" alt="">
+                        </div>
+                    {% endif %}
                 {% endfor %}
             </div>
+
         {% elseif project.imageDisplay == 3 %}
             <div class="row mt-5 row-cols-md-3">
                 {% for image in project.images %}
-                    <div class="card col">
-                        <img src="{{ vich_uploader_asset(image, 'imageFile')}}"  alt="">
-                    </div>
+                    {% if image != project.images[0] %}
+                        <div class="card border-0 col p-1">
+                            <img src="{{ vich_uploader_asset(image, 'imageFile') }}" alt="">
+                        </div>
+                    {% endif %}
                 {% endfor %}
             </div>
     {% endif %}
 
 
 
-    {% for image in project.images %}
-        {% if image != project.images[0] %}
-            <div class="card">
-                <img src="{{ vich_uploader_asset(image, 'imageFile') }}" alt="">
-            </div>
-        {% endif %}
-    {% endfor %}
+
 
 
 

@@ -31,33 +31,33 @@
 
 </div>
 
-    <div class="row mb-5">
-    {% for project in projects|sort((b, a) => a.customOrder <=> b.customOrder) %}
-        <div class="cont col-md-4 p-md-0" >
-            <a href="{{ path('show_project', {id:project.id}) }}" >
+{#    <div class="row mb-5">#}
+{#    {% for project in projects|sort((b, a) => a.customOrder <=> b.customOrder) %}#}
+{#        <div class="cont  col-md-4 p-md-0" >#}
+{#            <a href="{{ path('show_project', {id:project.id}) }}" >#}
 
-            {% if project.images|length > 0 %}
-            <img src="{{ vich_uploader_asset(project.images.0, 'imageFile')}}" alt="{{ project.name }} project image" class="image">
-            {% endif %}
+{#            {% if project.images|length > 0 %}#}
+{#            <img src="{{ vich_uploader_asset(project.images.0, 'imageFile')}}" alt="{{ project.name }} project image" class="image">#}
+{#            {% endif %}#}
 
-            <div class="overlay me-2 mb-2 p-2">
-                <div class="text text-center">
-                    <h3>{{ project.name }}</h3>
+{#            <div class="overlay me-2 mb-2 p-2">#}
+{#                <div class="text text-center">#}
+{#                    <h3>{{ project.name }}</h3>#}
 
-                    {% if locale == 'fr' %}
-                        <p class="fw-normal">{{ project.subtitleFr }}</p>
-                    {% else %}
-                        <p class="fw-normal">{{ project.subtitle }}</p>
-                    {% endif %}
+{#                    {% if locale == 'fr' %}#}
+{#                        <p class="fw-normal">{{ project.subtitleFr }}</p>#}
+{#                    {% else %}#}
+{#                        <p class="fw-normal">{{ project.subtitle }}</p>#}
+{#                    {% endif %}#}
 
-                    <p class="fw-normal">- {{ project.year }} -</p>
-                </div>
-            </div>
-        </a>
-        </div>
+{#                    <p class="fw-normal">- {{ project.year }} -</p>#}
+{#                </div>#}
+{#            </div>#}
+{#        </a>#}
+{#        </div>#}
 
-    {% endfor %}
-</div>
+{#    {% endfor %}#}
+{#</div>#}
 
 
 {% endblock %}
