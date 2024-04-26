@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Repository\ProjectRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -19,9 +20,27 @@ class HomeController extends AbstractController
 
 
     #[Route('{_locale}/', name: 'app_home')]
-    public function index(): Response
+    public function index(ProjectRepository $projectRepository): Response
     {
-        return $this->render('home/index.html.twig');
+        $nonDevProjects = [];
+        $devProjects = [];
+        //dd($projectRepository->findAll());
+
+
+        foreach ($projectRepository->findAll() as $project) {
+            if($project->getDiscipline()->getName() != "web development") {
+                $nonDevProjects[] = $project;
+            }
+            else {
+                $devProjects[] = $project;
+            }
+        }
+
+
+        return $this->render('home/index.html.twig', [
+            'nonDevProjects' => $nonDevProjects,
+            'devProjects' => $devProjects,
+        ]);
     }
 
 

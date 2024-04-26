@@ -1,18 +1,11 @@
 
-    <nav class="sticky-top navbar navbar-expand-lg mx-md-5 bg-white">
-        <div class="container-fluid d-flex justify-content-between mt-md-3">
+    <nav class="sticky-top navbar navbar-expand-lg bg-white">
+        <div class="container d-flex justify-content-between mt-md-3">
 
             <div class="">
                 <a class="navbar-brand" href="{{ path('app_home') }}">
                     <img src="{{ asset('logo.svg') }}" alt="my little mouse logo" height="50px">
                 </a>
-
-                {% if app.current_route != 'app_home' %}
-
-                <a href="{{ path('app_project') }}" class="btn visbyB text-uppercase m-0">{{ "navbar.projects"|trans }}</a>
-                <a href="{{ path('app_me') }}" class="btn visbyB text-uppercase ">{{ "navbar.me"|trans }}</a>
-
-                {% endif %}
 
                 {% if is_granted('ROLE_ADMIN') %}
                     <a href="{{ path('app_admin_index') }}" class="btn text-uppercase kalam">Manage projects</a>
@@ -35,6 +28,9 @@
                     {% set uri = uri|replace({'/fr/': "/en/"}) %}
                     <a href="{{ uri }}" class="text-decoration-none fs-4" ><img src="{{ asset('eng.svg') }}" alt="" height="36px"></a>
                 {% endif %}
+                <a class="btn btn-bleu text-decoration-none m-0" href="https://github.com/Mousedlf" target="_blank">
+                    <i class="fs-1 fa-brands fa-github"></i>
+                </a>
 
             </div>
 

@@ -1,192 +1,116 @@
 @import "~bootstrap/scss/bootstrap";
-@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;600;700;800&display=swap');
 
 // FONTS ----------------------------------------------------
 
 @font-face {
-  font-family: 'Visby Heavy';
-  src: url('VisbyHeavy.woff') format('woff');
+  font-family: 'Satoshi Bold';
+  src: url('Satoshi-Bold.otf') format('otf');
 }
+
 @font-face {
-  font-family: 'Visby Bold';
-  src: url('VisbyBold.woff') format('woff');
-}
-//@font-face {
-//  font-family: 'Apercu Regular';
-//  src: url('apercu-regular.otf') format('otf');
-//}
-//@font-face {
-//  font-family: 'Apercu Bold';
-//  src: url('apercu-bold.otf') format('otf');
-//}
-@font-face {
-  font-family: 'Urbancat';
-  src: url('urbancat.otf') format('otf');
+  font-family: 'Satoshi Medium';
+  src: url('Satoshi-Medium.otf') format('otf');
 }
 
-.visbyB{
-  font-family: 'Visby Bold', sans-serif;
-}
-
-
-// bricolage ----------------------------------------------------
-
-.marginX{
-  margin-top: 5rem;
-}
-
-
-// NAVBAR ----------------------------------------------------
-
-.navbar{
-  z-index: 1;
+body{
+ padding: 0;
+  margin: 0;
+  overflow-x: hidden;
 }
 
 
 // TEXT STYLES ----------------------------------------------------
 
 h1{
-  font-family: 'Archivo', sans-serif;
-  font-size: 3rem;
   font-weight: bold;
   text-transform: uppercase;
-  margin-top: 4rem;
-  margin-bottom: 1rem;
-  color: #0000ff;
+  font-size: 10vw;
+  font-family: "Satoshi Bold", 'sans-serif';
 }
 
-@media(min-width: 80rem) {
-  h1{
-    font-size: 4rem;
-    margin-bottom: 2rem;
-  }
-}
 
-h2,h3,h4{
-  font-family: 'Archivo', sans-serif;
+h2{
+  text-transform: uppercase;
   font-size: 1.5rem;
-  margin-top: 2rem;
+  font-family: "Satoshi Medium", 'sans-serif';
+
 }
-  @media(min-width: 80rem) {
-    h2,h3,h4{
-      font-size: 2rem;
-      margin-top: 3rem;
-    }
-  }
+
+p{
+  font-size: 1.25rem;
+}
 
 
-p, a{
-  font-size: 1rem;
-}
-  @media(min-width: 80rem) {
-    p, a{
-      font-size: 1.25rem;
-      line-height: 2rem;
-    }
-  }
 
-.text-primary{
-  color: #0000ff !important;
-}
-.text-black:hover{
-  color: #2b3035;
-}
+  //@media(min-width: 80rem) {
+  //
+  //}
+
+
 
 
 // BUTTONS ----------------------------------------------------
 
-.btn{
-  padding: 10px 30px;
-  border-radius: 30px;
-  margin-right: 15px;
-  text-transform: lowercase;
-}
+// Horizontal scroll with arrows ----------------------------------------------------
 
-.btn-bleu{
-  color:black !important;
-  margin-right: 18px;
-}
-
-.btn-bleu:hover{
-  color: #0000ff !important;
-}
-
-.btn-primary{
-  background-color: #0000ff !important;
-  color:white !important;
-  border:none;
-}
-.btn-primary:hover{
-  background-color: #2b3035 !important;
-  color:white;
-}
-.btn-secondary{
-  border: 2px solid #0000ff !important;
-  background-color: white;
-  color:#0000ff !important;
-}
-.btn-secondary:hover{
-  border: 2px solid #2b3035 !important;
-  background-color: white;
-  color:#2b3035;
-}
-
-
-// LINE ANIMATION ----------------------------------------------------
-
-.path {
-  stroke-dasharray: 4200;
-  stroke-dashoffset: 4400;
-  animation: dash 7s linear alternate 20;
-}
-
-@keyframes dash {
-  from {
-    stroke-dashoffset: 4200;
-  }
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-
-// OVERLAY GALERY  ----------------------------------------------------
-
-.cont {
+/*
+For more details-
+https://www.testkarts.com/blog/horizontal-card-scroll-with-arrow */
+.cover {
   position: relative;
+  padding: 0 30px;
+  margin-top: 100px;
 }
 
-.image {
-  display: block;
+.left {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.right {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.scroll-images {
+  position: relative;
   width: 100%;
   height: auto;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
 }
 
-.overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  transition: .5s ease;
-  background-color: rgba(0, 0, 0, 0.75);
-  //border: solid 5px #9CC3D5;
+.child {
+  min-width: 250px;
+  height: auto;
+  overflow: hidden;
+
 }
 
-.cont:hover .overlay {
-  opacity: 75;
+
+.scroll-images::-webkit-scrollbar {
+  width: 5px;
+  height: 8px;
+  background-color: #aaa;
 }
 
-.text {
-  color: white;
-  font-family: 'Archivo', sans-serif;
-  font-weight: 700;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.scroll-images::-webkit-scrollbar-thumb {
+  background-color: black;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 25px;
 }
 

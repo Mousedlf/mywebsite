@@ -4,23 +4,115 @@
 
 {% block body %}
 
-    <h1 class="text-uppercase mb-1 pt-3">{{ "home.me"|trans }}</h1>
-    <h2 class="mt-0">{{ "home.job"|trans }}</h2>
+<div class="vh-100">
 
-    <div class="d-flex flex-column flex-md-row mt-3 mt-md-5 pt-3">
-            <a href="{{ path('app_project') }}" class="btn btn-primary text-decoration-none fs-5">{{ "home.cta.projects"|trans }}</a>
-            <a href="{{ path('app_me') }}" class="btn btn-secondary text-decoration-none fs-5">{{ "home.cta.me"|trans }}</a>
-
+    <div class="d-flex flex-column text-center justify-content-center">
+        <h2 class="mt-0">{{ "home.availability"|trans }}</h2>
+        <h1>CAROLINE DE LA FOUCHARDIERE</h1>
+        <h2 class="mt-0">{{ "home.job1"|trans }}</h2>
+        <h2 class="mt-0">{{ "home.job2"|trans }}</h2>
     </div>
 
-    <div class="mt-5 pt-5">
-        <a class="btn btn-bleu text-decoration-none m-0" href="https://github.com/Mousedlf" target="_blank">
-            <i class="fs-1 fa-brands fa-github"></i>
-        </a>
-        <a class="btn btn-bleu text-decoration-none " href="https://www.linkedin.com/in/caroline-de-la-fouchardiere-289a5b1b7?originalSubdomain=fr" target="_blank">
-            <i class="fs-1 fa-brands fa-linkedin"></i>
-        </a>
+</div>
+
+
+    <h2>Web development projects</h2>
+
+    <div class="">
+        {% for project in devProjects  %}
+
+                <div class="d-flex justify-content-between border-bottom border-2 py-4">
+                    <div class="col-8">
+                        <p>{{ project.description }}</p>
+                        <button class="btn btn-sm btn-primary">Primary</button>
+                    </div>
+                    <div class="col-4 text-end">
+                        <a class="btn btn-bleu text-decoration-none m-0" href="https://github.com/Mousedlf" target="_blank">
+                            <i class="fs-1 fa-brands fa-github"></i>
+                        </a>
+                        <a class="btn btn-bleu text-decoration-none m-0" href="https://github.com/Mousedlf" target="_blank">
+                            <i class="fs-1 fa-brands fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+        {% endfor %}
     </div>
+
+    <h2>Other projects</h2>
+
+    <div class="cover">
+        <button class="left" onclick="leftScroll()">
+            <i class="fas fa-angle-double-left"></i>
+        </button>
+        <div class="scroll-images">
+            {% for project in nonDevProjects %}
+
+                <div class="child d-flex flex-column overflow-hidden me-4 col-6 col-lg-3">
+                    <div class="card border-0 ">
+                        <img src="{{ vich_uploader_asset(project.images.0, 'imageFile')}}" alt="" class="rounded-2">
+                    </div>
+                    <h3>{{ project.name }} - {{ project.year }}</h3>
+                </div>
+
+            {% endfor %}
+        </div>
+        <button class="right" onclick="rightScroll()">
+            <i class="fas fa-angle-double-right"></i>
+        </button>
+    </div>
+
+
+
+
+
+{#    <a class="btn btn-bleu text-decoration-none " href="https://www.linkedin.com/in/caroline-de-la-fouchardiere-289a5b1b7?originalSubdomain=fr" target="_blank">#}
+{#        <i class="fs-1 fa-brands fa-linkedin"></i>#}
+{#    </a>#}
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const scrollImages = document.querySelector(".scroll-images");
+            const scrollLength = scrollImages.scrollWidth - scrollImages.clientWidth;
+            const leftButton = document.querySelector(".left");
+            const rightButton = document.querySelector(".right");
+
+            function checkScroll() {
+                const currentScroll = scrollImages.scrollLeft;
+                if (currentScroll === 0) {
+                    leftButton.setAttribute("disabled", "true");
+                    rightButton.removeAttribute("disabled");
+                } else if (currentScroll === scrollLength) {
+                    rightButton.setAttribute("disabled", "true");
+                    leftButton.removeAttribute("disabled");
+                } else {
+                    leftButton.removeAttribute("disabled");
+                    rightButton.removeAttribute("disabled");
+                }
+            }
+
+            scrollImages.addEventListener("scroll", checkScroll);
+            window.addEventListener("resize", checkScroll);
+            checkScroll();
+
+            function leftScroll() {
+                scrollImages.scrollBy({
+                    left: -scrollImages.clientWidth,
+                    behavior: "smooth"
+                });
+            }
+
+            function rightScroll() {
+                scrollImages.scrollBy({
+                    left: 500,
+                    behavior: "smooth"
+                });
+            }
+
+            leftButton.addEventListener("click", leftScroll);
+            rightButton.addEventListener("click", rightScroll);
+        });
+
+    </script>
 
 
 

@@ -2,8 +2,9 @@ navbar:
   projects: 'Projects'
   me: "About me"
 home:
-  me: "Hey, I'm Caroline"
-  job: "webdesigner, web developer, and graphic designer based in Lyon, France"
+  availability: "Available for projects"
+  job1: "Fullstack web developer"
+  job2: "doing some web and graphic design"
   cta:
     projects: "discover my projects"
     me: "more about me"
